@@ -16,3 +16,8 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean compile package'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+      targetPath: '$(Pipeline.Workspace)'
+      publishLocation: 'pipeline'
